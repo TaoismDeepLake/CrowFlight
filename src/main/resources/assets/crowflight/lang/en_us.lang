@@ -1,8 +1,11 @@
-itemGroup.CrowFlightTab=Crow Flight
+itemGroup.CrowFlightMiscTab=Crow Flight
 
 //Blocks
 tile.example.name=Light Block
 
+//Buffs
+crowflight.potion.crow_flight=Crow Flight
+
 //Items
 item.crow_on_plane.name=Angry Crow Takes Flight!
-item.crow_on_plane.desc=Glides when holding, eliminates fall damage. (Inspired by "Black Tiger" Alfred)
+item.crow_on_plane.desc=Right click and jump to dash and crash. (Inspired by "Black Tiger" Alfred)

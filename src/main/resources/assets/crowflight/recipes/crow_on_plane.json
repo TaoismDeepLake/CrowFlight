@@ -1,0 +1,34 @@
+{
+    "type": "minecraft:crafting_shaped",
+    
+    "pattern":
+    [
+        " I ",
+        "FIF",
+        "DID"
+    ],
+    
+    "key":
+    {
+        "F":
+        {
+            "item": "minecraft:feather"
+        },
+        "D":
+        {
+            "item": "minecraft:dye",
+            "data": 0
+        },
+        "I":
+        {
+            "item": "minecraft:iron_ingot"
+        }
+        
+    },
+    
+    "result":
+    {
+        "item": "crowflight:crow_on_plane",
+        "count": 1
+    }
+}
