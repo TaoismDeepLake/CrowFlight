@@ -1,0 +1,16 @@
+[
+{
+  "modid": "crowflight",
+  "name": "Crow Flight",
+  "description": "A mod that makes no sense.",
+  "version": "0.3.2",
+  "mcversion": "${mcversion}",
+  "url": "1.12.2",
+  "updateUrl": "",
+  "authorList": ["TaoismDeepLake"],
+  "credits": "Black Tiger Alfred, Jackie Chan",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
