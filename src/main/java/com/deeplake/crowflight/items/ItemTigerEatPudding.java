@@ -21,9 +21,10 @@ import java.util.List;
 
 import static com.deeplake.crowflight.util.IDLGeneral.TICK_PER_SECOND;
 
-public class ItemGoatClimbsHill extends ItemBase {
-    // /give @p crowflight:crow_on_plane
-    private final static float cdTime = 10f;
+public class ItemTigerEatPudding extends ItemBase {
+    // /give @p crowflight:tiger_pudding
+    private final static float cdTime = 5f;
+    private final static float durTime = 60f;
 
 
     private int GetMaxTick()
@@ -31,7 +32,7 @@ public class ItemGoatClimbsHill extends ItemBase {
         return (int)(cdTime * TICK_PER_SECOND);
     }
 
-    public ItemGoatClimbsHill(String name) {
+    public ItemTigerEatPudding(String name) {
         super(name);
         setMaxStackSize(1);
         setMaxDamage(GetMaxTick());
@@ -48,13 +49,9 @@ public class ItemGoatClimbsHill extends ItemBase {
     @Override
     public ActionResult<ItemStack> onItemRightClick(World world, EntityPlayer player, @Nonnull EnumHand hand) {
         ItemStack stack = player.getHeldItem(hand);
-        //CrowFlight.LogWarning("hhh");
-        //CrowFlight.Log(String.format("(%d/%d)", stack.getItemDamage(), stack.getMaxDamage()));
         if (stack.getItemDamage() == 0) {
-            player.addPotionEffect(new PotionEffect(MobEffects.JUMP_BOOST, 20, 3));
-            player.addPotionEffect(new PotionEffect(ModPotions.CROW_FLIGHT, (int)((3) * TICK_PER_SECOND) , 0));
+            player.addPotionEffect(new PotionEffect(ModPotions.TIGER_PUDDING, (int)((durTime - 2) * TICK_PER_SECOND) , 0));
             stack.setItemDamage(GetMaxTick());
-            //CrowFlight.Log(String.format("Damage to(%d/%d)", stack.getItemDamage(), stack.getMaxDamage()));
             return ActionResult.newResult(EnumActionResult.SUCCESS, stack);
         }
 
@@ -64,7 +61,7 @@ public class ItemGoatClimbsHill extends ItemBase {
     @Override
     public void onUpdate(ItemStack stack, World worldIn, Entity entityIn, int itemSlot, boolean isSelected)
     {
-        if (entityIn.onGround)
+        if (isSelected)
         {
             stack.setItemDamage(stack.getItemDamage() - 1);
         }
@@ -73,7 +70,7 @@ public class ItemGoatClimbsHill extends ItemBase {
     @SideOnly(Side.CLIENT)
     @Override
     public void addInformation(ItemStack stack, World world, List<String> tooltip, ITooltipFlag flag) {
-        String mainDesc = String.format(I18n.format("item.crow_on_plane.desc")) ;
+        String mainDesc = String.format(I18n.format( stack.getUnlocalizedName()+".desc")) ;
         tooltip.add(mainDesc);
     }
 }

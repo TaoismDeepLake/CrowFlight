@@ -5,9 +5,14 @@ tile.example.name=灯
 
 //Buffs
 crowflight.potion.crow_flight=怒鸦展翅!
+crowflight.potion.tiger_pudding=虎抓……豆腐？
 
 //Items
 item.crow_on_plane.name=乌鸦坐飞机!
 item.crow_on_plane.desc=某动画人物的绝技，右键+跳跃即可俯冲撞击。
 
+item.tiger_pudding.name=虎爪吃……布丁？
+item.tiger_pudding.desc=某动画人物的技能，右键可在一段时间内使自己不造成击退。
 
+item.spider_eats_fly.name=蜘蛛吃苍蝇！
+item.spider_eats_fly.desc=右键施放，对附近所有其他悬空生物造成伤害，并在所在处制造蜘蛛网阻碍它们的行动。

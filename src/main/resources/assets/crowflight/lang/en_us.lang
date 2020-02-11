@@ -4,8 +4,15 @@ itemGroup.CrowFlightMiscTab=Crow Flight
 tile.example.name=Light Block
 
 //Buffs
-crowflight.potion.crow_flight=Crow Flight
+crowflight.potion.crow_flight=Crow On Plane
+crowflight.potion.tiger_pudding=Tiger Claw Eats ... Pudding
 
 //Items
 item.crow_on_plane.name=Angry Crow Takes Flight!
-item.crow_on_plane.desc=Right click and jump to dash and crash. (Inspired by "Black Tiger" Alfred)
+item.crow_on_plane.desc=Right click and jump to dash and crash. (Inspired by "Black Tiger" Hak-Foo)
+
+item.tiger_pudding.name=Tiger Lashes...Through Pudding?
+item.tiger_pudding.desc=Right click to refrain knockback. (Inspired by "Black Tiger" Hak-Foo)
+
+item.spider_eats_fly.name=Spider Eats Fly!
+item.spider_eats_fly.desc=Right click to damage nearby airborn creatures and cast web on them. (Inspired by "Black Tiger" Hak-Foo)

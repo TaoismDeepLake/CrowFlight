@@ -2,10 +2,12 @@ package com.deeplake.crowflight.init;
 
 import com.deeplake.crowflight.CrowFlight;
 import com.deeplake.crowflight.potions.PotionCrowFlight;
+import com.deeplake.crowflight.potions.PotionSimple;
 import com.deeplake.crowflight.util.Reference;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.potion.Potion;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 import net.minecraftforge.event.RegistryEvent;
@@ -22,6 +24,8 @@ import static net.minecraft.util.DamageSource.FALL;
 @Mod.EventBusSubscriber(modid = Reference.MOD_ID)
 public class ModPotions {
     public static Potion CROW_FLIGHT;
+    public static PotionSimple TIGER_PUDDING;
+
 
     @Nullable
     private static Potion getRegisteredMobEffect(String id)
@@ -42,8 +46,10 @@ public class ModPotions {
     public static void registerPotions(RegistryEvent.Register<Potion> evt)
     {
         CROW_FLIGHT = new PotionCrowFlight(false, 0x111111, "crow_flight", 0);
+        TIGER_PUDDING = new PotionSimple(false, 0xccffcc,"tiger_pudding", 1);
 
         evt.getRegistry().register(CROW_FLIGHT);
+        evt.getRegistry().register(TIGER_PUDDING);
     }
 
 //    @SubscribeEvent
@@ -72,7 +78,6 @@ public class ModPotions {
                 return;
             }
         }
-
     }
 
     @SubscribeEvent
@@ -84,6 +89,12 @@ public class ModPotions {
             //CrowFlight.LogWarning("Canceled a kb");
             evt.setCanceled(true);
             return;
+        }
+
+        Entity source = evt.getAttacker();
+        if (source instanceof EntityLivingBase && ((EntityLivingBase)source).getActivePotionEffect(TIGER_PUDDING) != null)
+        {
+            evt.setCanceled(true);
         }
 
     }

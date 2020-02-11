@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.deeplake.crowflight.items.ItemCrowOnPlane;
+import com.deeplake.crowflight.items.ItemSpiderEatFly;
+import com.deeplake.crowflight.items.ItemTigerEatPudding;
 import net.minecraft.init.MobEffects;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.inventory.EntityEquipmentSlot;
@@ -43,8 +45,12 @@ public class ModItems {
 	 * - add a json and corresponding png
 	 * - 
 	 */
-	
+
+
+
 	public static final ItemCrowOnPlane CROW_ON_PLANE = new ItemCrowOnPlane("crow_on_plane");
+	public static final ItemTigerEatPudding ITEM_TIGER_EAT_PUDDING = new ItemTigerEatPudding("tiger_pudding");
+	public static final ItemSpiderEatFly ITEM_SPIDER_EAT_FLY = new ItemSpiderEatFly("spider_eats_fly");
 //	public static final ItemBase DIVINE_INGOT = new ItemBase("divine_ingot");
 //	public static final ItemBase PURE_INGOT = new ItemBase("pure_ingot");
 //	//public static final ItemBase DIVINE_ANVIL = new ItemBase("divine_anvil");
