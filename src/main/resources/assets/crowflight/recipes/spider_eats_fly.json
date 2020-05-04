@@ -1,0 +1,32 @@
+{
+    "type": "minecraft:crafting_shaped",
+    
+    "pattern":
+    [
+        "E E",
+        "SRS",
+        "S S"
+    ],
+    
+    "key":
+    {
+        "S":
+        {
+            "item": "minecraft:stick"
+        },
+        "E":
+        {
+            "item": "minecraft:spider_eye"
+        },
+        "R":
+        {
+            "item": "minecraft:rotten_flesh"
+        }
+    },
+    
+    "result":
+    {
+        "item": "crowflight:spider_eats_fly",
+        "count": 1
+    }
+}

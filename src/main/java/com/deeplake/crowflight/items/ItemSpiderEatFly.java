@@ -3,6 +3,7 @@ package com.deeplake.crowflight.items;
 import com.deeplake.crowflight.CrowFlight;
 import com.deeplake.crowflight.client.creativetabs.AllTabs;
 import com.deeplake.crowflight.init.ModPotions;
+import com.deeplake.crowflight.util.CommonFunctions;
 import com.deeplake.crowflight.util.IDLGeneral;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.resources.I18n;
@@ -83,6 +84,7 @@ public class ItemSpiderEatFly extends ItemSkillBase {
                 }
             }
 
+            CommonFunctions.BroadCastToPlayersNearAPlayer(worldIn, playerIn, getUnlocalizedName() + ".name");
             playerIn.swingArm(hand);
             activateCoolDown(playerIn, stack);
         }else {
@@ -100,12 +102,5 @@ public class ItemSpiderEatFly extends ItemSkillBase {
         {
             stack.setItemDamage(stack.getItemDamage() - 1);
         }
-    }
-
-    @SideOnly(Side.CLIENT)
-    @Override
-    public void addInformation(ItemStack stack, World world, List<String> tooltip, ITooltipFlag flag) {
-        String mainDesc = String.format(I18n.format("item.crow_on_plane.desc")) ;
-        tooltip.add(mainDesc);
     }
 }

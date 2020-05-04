@@ -3,6 +3,7 @@ package com.deeplake.crowflight.items;
 import com.deeplake.crowflight.CrowFlight;
 import com.deeplake.crowflight.client.creativetabs.AllTabs;
 import com.deeplake.crowflight.init.ModPotions;
+import com.deeplake.crowflight.util.CommonFunctions;
 import com.deeplake.crowflight.util.IDLGeneral;
 import com.deeplake.crowflight.util.MathUtil;
 import net.minecraft.client.resources.I18n;
@@ -18,6 +19,8 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.text.TextComponentTranslation;
+import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -61,6 +64,13 @@ public class ItemCrowOnPlane extends ItemBase {
             player.addPotionEffect(new PotionEffect(ModPotions.CROW_FLIGHT, (int)((cdTime - 2) * TICK_PER_SECOND) , 0));
             stack.setItemDamage(GetMaxTick());
             //CrowFlight.Log(String.format("Damage to(%d/%d)", stack.getItemDamage(), stack.getMaxDamage()));
+
+//            if (!world.isRemote)
+//            {
+//                player.sendMessage(new TextComponentTranslation(getUnlocalizedName() + ".name"));
+//            }
+
+            CommonFunctions.BroadCastToPlayersNearAPlayer(world, player, getUnlocalizedName() + ".name");
             return ActionResult.newResult(EnumActionResult.SUCCESS, stack);
         }
 
@@ -76,10 +86,10 @@ public class ItemCrowOnPlane extends ItemBase {
         }
     }
 
-    @SideOnly(Side.CLIENT)
-    @Override
-    public void addInformation(ItemStack stack, World world, List<String> tooltip, ITooltipFlag flag) {
-        String mainDesc = String.format(I18n.format("item.crow_on_plane.desc")) ;
-        tooltip.add(mainDesc);
-    }
+//    @SideOnly(Side.CLIENT)
+//    @Override
+//    public void addInformation(ItemStack stack, World world, List<String> tooltip, ITooltipFlag flag) {
+//        String mainDesc = String.format(I18n.format("item.crow_on_plane.desc")) ;
+//        tooltip.add(mainDesc);
+//    }
 }

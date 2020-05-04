@@ -2,6 +2,7 @@ package com.deeplake.crowflight.items;
 
 import com.deeplake.crowflight.client.creativetabs.AllTabs;
 import com.deeplake.crowflight.init.ModPotions;
+import com.deeplake.crowflight.util.CommonFunctions;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;
@@ -25,7 +26,6 @@ public class ItemTigerEatPudding extends ItemBase {
     // /give @p crowflight:tiger_pudding
     private final static float cdTime = 5f;
     private final static float durTime = 60f;
-
 
     private int GetMaxTick()
     {
@@ -52,6 +52,7 @@ public class ItemTigerEatPudding extends ItemBase {
         if (stack.getItemDamage() == 0) {
             player.addPotionEffect(new PotionEffect(ModPotions.TIGER_PUDDING, (int)((durTime - 2) * TICK_PER_SECOND) , 0));
             stack.setItemDamage(GetMaxTick());
+            CommonFunctions.BroadCastToPlayersNearAPlayer(world, player, getUnlocalizedName() + ".name");
             return ActionResult.newResult(EnumActionResult.SUCCESS, stack);
         }
 
@@ -65,12 +66,5 @@ public class ItemTigerEatPudding extends ItemBase {
         {
             stack.setItemDamage(stack.getItemDamage() - 1);
         }
-    }
-
-    @SideOnly(Side.CLIENT)
-    @Override
-    public void addInformation(ItemStack stack, World world, List<String> tooltip, ITooltipFlag flag) {
-        String mainDesc = String.format(I18n.format( stack.getUnlocalizedName()+".desc")) ;
-        tooltip.add(mainDesc);
     }
 }

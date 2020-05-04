@@ -1,13 +1,12 @@
 itemGroup.CrowFlightMiscTab=Crow Flight
 
-//Blocks
+#Blocks
 tile.example.name=Light Block
 
-//Buffs
+#Buffs
 crowflight.potion.crow_flight=Crow On Plane
 crowflight.potion.tiger_pudding=Tiger Claw Eats ... Pudding
-
-//Items
+#Items
 item.crow_on_plane.name=Angry Crow Takes Flight!
 item.crow_on_plane.desc=Right click and jump to dash and crash. (Inspired by "Black Tiger" Hak-Foo)
 

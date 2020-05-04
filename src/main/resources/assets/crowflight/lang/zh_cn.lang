@@ -1,13 +1,13 @@
 itemGroup.CrowFlightMiscTab=乌鸦坐飞机
 
-//Blocks
+#Blocks
 tile.example.name=灯
 
-//Buffs
+#Buffs
 crowflight.potion.crow_flight=怒鸦展翅!
 crowflight.potion.tiger_pudding=虎抓……豆腐？
 
-//Items
+#Items
 item.crow_on_plane.name=乌鸦坐飞机!
 item.crow_on_plane.desc=某动画人物的绝技，右键+跳跃即可俯冲撞击。
 
